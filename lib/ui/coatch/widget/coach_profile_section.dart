@@ -61,7 +61,7 @@ class CoachHeaderSection extends StatelessWidget {
             /// Profile Image
             CircleAvatar(
               radius: 40.r,
-              backgroundImage: AssetImage(AppImages.profile),
+              backgroundImage: AssetImage(AppImages.profileSalman),
             ),
 
             SizedBox(width: 14.w),

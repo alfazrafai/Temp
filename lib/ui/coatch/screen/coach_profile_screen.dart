@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:temp/ui/coatch/widget/coach_group_section.dart';
 import 'package:temp/ui/coatch/widget/coach_level_section.dart';
 import 'package:temp/ui/coatch/widget/coach_location_section.dart';
 
 import '../../../value/app_colors.dart';
 
 import '../store/coach_profile_store.dart';
+import '../widget/coach_book_button.dart';
 import '../widget/coach_coaching_type_section.dart';
 import '../widget/coach_date_section.dart';
 import '../widget/coach_people_section.dart';
@@ -73,6 +75,16 @@ class _CoachProfileScreenState extends State<CoachProfileScreen> {
 
                 //10
                 CoachLocationSection(store: store),
+
+                //11
+                CoachGroupSessionSection(store: store),
+
+                CoachBookSessionButton(
+                  enabled: true,
+                  onTap: () {
+                    // TODO: book session action
+                  },
+                ),
 
                 SizedBox(height: 25.h),
               ],

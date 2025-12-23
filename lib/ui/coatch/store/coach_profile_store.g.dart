@@ -161,6 +161,24 @@ mixin _$CoachProfileStore on _CoachProfileStore, Store {
     );
   }
 
+  late final _$joinedGroupSessionAtom = Atom(
+    name: '_CoachProfileStore.joinedGroupSession',
+    context: context,
+  );
+
+  @override
+  bool get joinedGroupSession {
+    _$joinedGroupSessionAtom.reportRead();
+    return super.joinedGroupSession;
+  }
+
+  @override
+  set joinedGroupSession(bool value) {
+    _$joinedGroupSessionAtom.reportWrite(value, super.joinedGroupSession, () {
+      super.joinedGroupSession = value;
+    });
+  }
+
   late final _$_CoachProfileStoreActionController = ActionController(
     name: '_CoachProfileStore',
     context: context,
@@ -287,6 +305,18 @@ mixin _$CoachProfileStore on _CoachProfileStore, Store {
   }
 
   @override
+  void toggleJoinGroup() {
+    final _$actionInfo = _$_CoachProfileStoreActionController.startAction(
+      name: '_CoachProfileStore.toggleJoinGroup',
+    );
+    try {
+      return super.toggleJoinGroup();
+    } finally {
+      _$_CoachProfileStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 selectedTabIndex: ${selectedTabIndex},
@@ -296,7 +326,8 @@ selectedDate: ${selectedDate},
 selectedTimeIndex: ${selectedTimeIndex},
 numberOfPeople: ${numberOfPeople},
 selectedLevelIndex: ${selectedLevelIndex},
-selectedLocationIndex: ${selectedLocationIndex}
+selectedLocationIndex: ${selectedLocationIndex},
+joinedGroupSession: ${joinedGroupSession}
     ''';
   }
 }

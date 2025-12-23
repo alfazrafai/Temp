@@ -11,7 +11,6 @@ class CoachStatsSection extends StatelessWidget {
       children: [
         SizedBox(height: 20.h),
 
-        /// STATS ROW
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
@@ -23,7 +22,6 @@ class CoachStatsSection extends StatelessWidget {
 
         SizedBox(height: 18.h),
 
-        /// ACTION BUTTONS
         Row(
           children: [
             Expanded(child: _ActionButton(text: 'Follow', isPrimary: false)),
@@ -36,7 +34,6 @@ class CoachStatsSection extends StatelessWidget {
   }
 }
 
-/// ---------- STAT ITEM ----------
 class _StatItem extends StatelessWidget {
   final String value;
   final String label;
@@ -78,7 +75,7 @@ class _ActionButton extends StatelessWidget {
       height: 44.h,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(22.r),
+        borderRadius: BorderRadius.circular(12.r),
         color: isPrimary ? AppColors.cardLight : Colors.transparent,
         border: Border.all(color: AppColors.primaryGreen),
       ),

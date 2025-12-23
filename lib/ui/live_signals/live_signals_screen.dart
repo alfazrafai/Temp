@@ -22,7 +22,7 @@ class _LiveSignalsScreenState extends State<LiveSignalsScreen> {
   @override
   void initState() {
     super.initState();
-    store = LiveSignalsStore(); // CREATED ONCE
+    store = LiveSignalsStore();
   }
 
   @override
@@ -45,7 +45,6 @@ class _LiveSignalsScreenState extends State<LiveSignalsScreen> {
 
               SizedBox(height: 16.h),
 
-              /// FILTERS
               SizedBox(
                 height: 48.h,
                 child: Observer(
@@ -68,7 +67,6 @@ class _LiveSignalsScreenState extends State<LiveSignalsScreen> {
 
               SizedBox(height: 20.h),
 
-              /// CARDS
               Expanded(
                 child: ListView.builder(
                   itemCount: 3,

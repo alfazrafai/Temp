@@ -26,10 +26,14 @@ abstract class _CoachProfileStore with Store {
   @observable
   int selectedLevelIndex = 0;
 
-  /// LOCATION
   @observable
   int selectedLocationIndex = 0;
 
+  /// GROUP SESSION
+  @observable
+  bool joinedGroupSession = false;
+
+  // ---------- ACTIONS ----------
   @action
   void changeTab(int index) => selectedTabIndex = index;
 
@@ -63,4 +67,9 @@ abstract class _CoachProfileStore with Store {
 
   @action
   void changeLocation(int index) => selectedLocationIndex = index;
+
+  @action
+  void toggleJoinGroup() {
+    joinedGroupSession = !joinedGroupSession;
+  }
 }

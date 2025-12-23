@@ -18,7 +18,6 @@ class SignalCard extends StatelessWidget {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            /// CARD BODY
             Container(
               padding: EdgeInsets.fromLTRB(16.w, 26.h, 16.w, 16.h),
               decoration: BoxDecoration(
@@ -31,7 +30,6 @@ class SignalCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  /// Stock row
                   Row(
                     children: [
                       CircleAvatar(
@@ -44,7 +42,6 @@ class SignalCard extends StatelessWidget {
                       ),
                       SizedBox(width: 10.w),
 
-                      /// Name + exchange
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -90,14 +87,14 @@ class SignalCard extends StatelessWidget {
                             children: [
                               const Icon(
                                 Icons.arrow_drop_up,
-                                color: AppColors.primaryGreen,
+                                color: AppColors.pGreen,
                               ),
                               Text(
                                 '2764.64',
                                 style: TextStyle(
                                   fontSize: 18.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: AppColors.primaryGreen,
+                                  color: AppColors.pGreen,
                                 ),
                               ),
                             ],
@@ -109,7 +106,6 @@ class SignalCard extends StatelessWidget {
 
                   SizedBox(height: 18.h),
 
-                  /// Bottom row
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -122,7 +118,6 @@ class SignalCard extends StatelessWidget {
               ),
             ),
 
-            /// TOP BORDER LINE
             Positioned(
               top: 0,
               left: 20.w,
@@ -130,20 +125,18 @@ class SignalCard extends StatelessWidget {
               child: Container(height: 1, color: Colors.white38),
             ),
 
-            /// INTRADAY TAG (LEFT)
             Positioned(
               top: -10.h,
               left: 20.w,
               child: _floatingTag('Intraday', AppColors.intradayPink),
             ),
 
-            /// SHORT TERM TAG (RIGHT)
             Positioned(
               top: -10.h,
               right: 20.w,
               child: _floatingTag(
                 'Short Term',
-                AppColors.primaryGreen,
+                AppColors.pGreen,
                 textColor: Colors.black,
               ),
             ),
@@ -152,8 +145,6 @@ class SignalCard extends StatelessWidget {
       ),
     );
   }
-
-  /// ===== SMALL WIDGETS =====
 
   Widget _floatingTag(
     String text,
@@ -206,7 +197,7 @@ class SignalCard extends StatelessWidget {
           style: TextStyle(
             fontSize: 14.sp,
             fontWeight: FontWeight.w600,
-            color: AppColors.primaryGreen,
+            color: AppColors.pGreen,
           ),
         ),
       ],
@@ -217,13 +208,10 @@ class SignalCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(
-        color: AppColors.primaryGreen,
+        color: AppColors.pGreen,
         borderRadius: BorderRadius.circular(20.r),
         boxShadow: [
-          BoxShadow(
-            color: AppColors.primaryGreen.withOpacity(0.5),
-            blurRadius: 10,
-          ),
+          BoxShadow(color: AppColors.pGreen.withOpacity(0.5), blurRadius: 10),
         ],
       ),
       child: Text(
