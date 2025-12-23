@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:temp/ui/coatch/widget/coach_level_section.dart';
+import 'package:temp/ui/coatch/widget/coach_location_section.dart';
 
 import '../../../value/app_colors.dart';
 
@@ -65,6 +67,14 @@ class _CoachProfileScreenState extends State<CoachProfileScreen> {
 
                 //8
                 CoachPeopleSection(store: store),
+
+                //9
+                CoachLevelSection(store: store),
+
+                //10
+                CoachLocationSection(store: store),
+
+                SizedBox(height: 25.h),
               ],
             ),
           ),

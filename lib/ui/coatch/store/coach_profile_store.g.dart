@@ -121,6 +121,46 @@ mixin _$CoachProfileStore on _CoachProfileStore, Store {
     });
   }
 
+  late final _$selectedLevelIndexAtom = Atom(
+    name: '_CoachProfileStore.selectedLevelIndex',
+    context: context,
+  );
+
+  @override
+  int get selectedLevelIndex {
+    _$selectedLevelIndexAtom.reportRead();
+    return super.selectedLevelIndex;
+  }
+
+  @override
+  set selectedLevelIndex(int value) {
+    _$selectedLevelIndexAtom.reportWrite(value, super.selectedLevelIndex, () {
+      super.selectedLevelIndex = value;
+    });
+  }
+
+  late final _$selectedLocationIndexAtom = Atom(
+    name: '_CoachProfileStore.selectedLocationIndex',
+    context: context,
+  );
+
+  @override
+  int get selectedLocationIndex {
+    _$selectedLocationIndexAtom.reportRead();
+    return super.selectedLocationIndex;
+  }
+
+  @override
+  set selectedLocationIndex(int value) {
+    _$selectedLocationIndexAtom.reportWrite(
+      value,
+      super.selectedLocationIndex,
+      () {
+        super.selectedLocationIndex = value;
+      },
+    );
+  }
+
   late final _$_CoachProfileStoreActionController = ActionController(
     name: '_CoachProfileStore',
     context: context,
@@ -223,6 +263,30 @@ mixin _$CoachProfileStore on _CoachProfileStore, Store {
   }
 
   @override
+  void changeLevel(int index) {
+    final _$actionInfo = _$_CoachProfileStoreActionController.startAction(
+      name: '_CoachProfileStore.changeLevel',
+    );
+    try {
+      return super.changeLevel(index);
+    } finally {
+      _$_CoachProfileStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void changeLocation(int index) {
+    final _$actionInfo = _$_CoachProfileStoreActionController.startAction(
+      name: '_CoachProfileStore.changeLocation',
+    );
+    try {
+      return super.changeLocation(index);
+    } finally {
+      _$_CoachProfileStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 selectedTabIndex: ${selectedTabIndex},
@@ -230,7 +294,9 @@ selectedSportIndex: ${selectedSportIndex},
 selectedCoachingTypeIndex: ${selectedCoachingTypeIndex},
 selectedDate: ${selectedDate},
 selectedTimeIndex: ${selectedTimeIndex},
-numberOfPeople: ${numberOfPeople}
+numberOfPeople: ${numberOfPeople},
+selectedLevelIndex: ${selectedLevelIndex},
+selectedLocationIndex: ${selectedLocationIndex}
     ''';
   }
 }
