@@ -24,7 +24,6 @@ class CoachDateSection extends StatelessWidget {
       children: [
         SizedBox(height: 24.h),
 
-        /// TITLE + CALENDAR
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -64,7 +63,6 @@ class CoachDateSection extends StatelessWidget {
 
         SizedBox(height: 14.h),
 
-        /// DATE CARDS
         Observer(
           builder: (_) => SizedBox(
             height: 110.h,
@@ -82,10 +80,10 @@ class CoachDateSection extends StatelessWidget {
                 return GestureDetector(
                   onTap: () => store.updateDate(date),
                   child: Container(
-                    width: 80.w,
+                    width: 85.w,
                     padding: EdgeInsets.symmetric(vertical: 14.h),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.r),
+                      borderRadius: BorderRadius.circular(10.r),
                       border: Border.all(
                         width: 1.5,
                         color: isSelected

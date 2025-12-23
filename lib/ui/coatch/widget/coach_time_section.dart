@@ -24,7 +24,6 @@ class CoachTimeSection extends StatelessWidget {
       children: [
         SizedBox(height: 24.h),
 
-        /// TITLE + SEE ALL
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -66,7 +65,6 @@ class CoachTimeSection extends StatelessWidget {
 
         SizedBox(height: 12.h),
 
-        /// TIME SLOTS
         Observer(
           builder: (_) => SizedBox(
             height: 44.h,

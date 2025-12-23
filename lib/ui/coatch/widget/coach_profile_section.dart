@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../value/app_colors.dart';
 import '../../../value/image_path_string.dart';
 
@@ -10,23 +11,13 @@ class CoachHeaderSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        /// TOP BAR
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                Icon(Icons.close, color: AppColors.textWhite, size: 22.sp),
-                SizedBox(width: 8.w),
-                Text(
-                  'Rally',
-                  style: TextStyle(
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textWhite,
-                  ),
-                ),
-              ],
+            Container(
+              height: 40.h,
+              width: 120.w,
+              child: Image.asset(AppImages.coachLogo),
             ),
             Row(
               children: [
@@ -54,19 +45,16 @@ class CoachHeaderSection extends StatelessWidget {
 
         SizedBox(height: 24.h),
 
-        /// PROFILE INFO
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// Profile Image
             CircleAvatar(
-              radius: 40.r,
+              radius: 60.r,
               backgroundImage: AssetImage(AppImages.profileSalman),
             ),
 
             SizedBox(width: 14.w),
 
-            /// Name + info
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,7 +62,7 @@ class CoachHeaderSection extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'Perry Schaden',
+                        'Salman Khan',
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
@@ -86,6 +74,23 @@ class CoachHeaderSection extends StatelessWidget {
                         Icons.verified,
                         size: 16.sp,
                         color: AppColors.primaryGreen,
+                      ),
+                      SizedBox(width: 20.w),
+
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.share,
+                            color: AppColors.textWhite,
+                            size: 16.sp,
+                          ),
+                          SizedBox(width: 6.w),
+                          Icon(
+                            Icons.favorite_border,
+                            size: 16.sp,
+                            color: AppColors.textWhite,
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -102,13 +107,12 @@ class CoachHeaderSection extends StatelessWidget {
 
                   SizedBox(height: 6.h),
 
-                  /// Rating + distance
                   Row(
                     children: [
                       Icon(
-                        Icons.star,
+                        Icons.bookmark_border_outlined,
                         size: 14.sp,
-                        color: AppColors.primaryGreen,
+                        color: AppColors.textWhite,
                       ),
                       SizedBox(width: 4.w),
                       Text(
@@ -117,6 +121,12 @@ class CoachHeaderSection extends StatelessWidget {
                           fontSize: 12.sp,
                           color: AppColors.textWhite,
                         ),
+                      ),
+                      SizedBox(width: 10.w),
+                      Icon(
+                        Icons.star_border_purple500_outlined,
+                        size: 14.sp,
+                        color: AppColors.primaryGreen,
                       ),
                       SizedBox(width: 6.w),
                       Text(
@@ -127,6 +137,11 @@ class CoachHeaderSection extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 12.w),
+                    ],
+                  ),
+                  SizedBox(height: 5.h),
+                  Row(
+                    children: [
                       Icon(
                         Icons.location_on_outlined,
                         size: 14.sp,
@@ -139,6 +154,29 @@ class CoachHeaderSection extends StatelessWidget {
                           fontSize: 12.sp,
                           color: AppColors.textMuted,
                         ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 5.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.sports_tennis_outlined,
+                        size: 18.sp,
+                        color: AppColors.textWhite,
+                      ),
+                      SizedBox(width: 8.w),
+                      Icon(
+                        Icons.sports_cricket,
+                        size: 18.sp,
+                        color: AppColors.textWhite,
+                      ),
+                      SizedBox(width: 8.w),
+                      Icon(
+                        Icons.sports_tennis_outlined,
+                        size: 18.sp,
+                        color: AppColors.textWhite,
                       ),
                     ],
                   ),

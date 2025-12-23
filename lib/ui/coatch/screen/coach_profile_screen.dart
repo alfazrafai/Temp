@@ -5,7 +5,6 @@ import 'package:temp/ui/coatch/widget/coach_level_section.dart';
 import 'package:temp/ui/coatch/widget/coach_location_section.dart';
 
 import '../../../value/app_colors.dart';
-
 import '../store/coach_profile_store.dart';
 import '../widget/coach_book_button.dart';
 import '../widget/coach_coaching_type_section.dart';
@@ -44,47 +43,31 @@ class _CoachProfileScreenState extends State<CoachProfileScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /// PART 1
                 const CoachHeaderSection(),
 
-                /// PART 2
                 const CoachStatsSection(),
 
                 SizedBox(height: 20.h),
 
-                /// PART 3
                 CoachTabsSection(store: store),
 
-                /// PART 4
                 CoachSportSection(store: store),
 
-                // PArt 5
                 CoachCoachingTypeSection(store: store),
 
-                // Part 6
                 CoachDateSection(store: store),
 
-                //7
                 CoachTimeSection(store: store),
 
-                //8
                 CoachPeopleSection(store: store),
 
-                //9
                 CoachLevelSection(store: store),
 
-                //10
                 CoachLocationSection(store: store),
 
-                //11
                 CoachGroupSessionSection(store: store),
 
-                CoachBookSessionButton(
-                  enabled: true,
-                  onTap: () {
-                    // TODO: book session action
-                  },
-                ),
+                CoachBookSessionButton(enabled: true, onTap: () {}),
 
                 SizedBox(height: 25.h),
               ],

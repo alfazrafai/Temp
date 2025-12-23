@@ -12,7 +12,7 @@ class CoachStatsSection extends StatelessWidget {
         SizedBox(height: 20.h),
 
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: const [
             _StatItem(value: '1234', label: 'Followers'),
             _StatItem(value: '1234', label: 'Students'),
@@ -47,12 +47,12 @@ class _StatItem extends StatelessWidget {
         Text(
           value,
           style: TextStyle(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w600,
+            fontSize: 20.sp,
+            fontWeight: FontWeight.bold,
             color: AppColors.textWhite,
           ),
         ),
-        SizedBox(height: 4.h),
+
         Text(
           label,
           style: TextStyle(fontSize: 12.sp, color: AppColors.textMuted),
@@ -62,7 +62,6 @@ class _StatItem extends StatelessWidget {
   }
 }
 
-/// ---------- ACTION BUTTON ----------
 class _ActionButton extends StatelessWidget {
   final String text;
   final bool isPrimary;
@@ -72,12 +71,14 @@ class _ActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 44.h,
+      height: 40.h,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.r),
-        color: isPrimary ? AppColors.cardLight : Colors.transparent,
-        border: Border.all(color: AppColors.primaryGreen),
+        color: isPrimary ? Colors.transparent : Colors.transparent,
+        border: Border.all(
+          color: isPrimary ? Colors.white : AppColors.primaryGreen,
+        ),
       ),
       child: Text(
         text,

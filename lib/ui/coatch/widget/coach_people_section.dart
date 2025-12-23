@@ -32,7 +32,6 @@ class CoachPeopleSection extends StatelessWidget {
         Observer(
           builder: (_) => Row(
             children: [
-              /// LEFT: CIRCLES (FLEXIBLE)
               Expanded(
                 child: Wrap(
                   spacing: 10.w,
@@ -75,7 +74,6 @@ class CoachPeopleSection extends StatelessWidget {
 
               SizedBox(width: 16.w),
 
-              /// RIGHT: - 6 +
               Row(
                 children: [
                   _counterButton(

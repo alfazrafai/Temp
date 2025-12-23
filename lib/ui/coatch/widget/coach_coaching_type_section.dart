@@ -12,7 +12,7 @@ class CoachCoachingTypeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final types = ['Individual', 'Group'];
+    final types = ['1:1', 'Group', 'Request', 'Online'];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,8 +20,9 @@ class CoachCoachingTypeSection extends StatelessWidget {
         SizedBox(height: 24.h),
 
         Text(
-          'Type of Coaching',
+          'Select type of coaching',
           style: TextStyle(
+            fontFamily: 'Myriadpro',
             fontSize: 14.sp,
             fontWeight: FontWeight.w600,
             color: AppColors.textWhite,
@@ -31,41 +32,47 @@ class CoachCoachingTypeSection extends StatelessWidget {
         SizedBox(height: 12.h),
 
         Observer(
-          builder: (_) => Row(
-            children: List.generate(types.length, (index) {
-              final isSelected = store.selectedCoachingTypeIndex == index;
+          builder: (_) => SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            child: Row(
+              children: List.generate(types.length, (index) {
+                final isSelected = store.selectedCoachingTypeIndex == index;
 
-              return Padding(
-                padding: EdgeInsets.only(right: 12.w),
-                child: GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onTap: () => store.changeCoachingType(index),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 22.w,
-                      vertical: 10.h,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(24.r),
-                      color: isSelected
-                          ? AppColors.primaryGreen
-                          : AppColors.cardLight,
-                      border: Border.all(
-                        color: isSelected ? Colors.transparent : Colors.white24,
+                return Padding(
+                  padding: EdgeInsets.only(right: 12.w),
+                  child: GestureDetector(
+                    onTap: () => store.changeCoachingType(index),
+                    child: Container(
+                      height: 38.h,
+                      padding: EdgeInsets.symmetric(horizontal: 18.w),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(22.r),
+                        color: Colors.transparent,
+                        border: Border.all(
+                          color: isSelected
+                              ? AppColors.primaryGreen
+                              : Colors.white54,
+                          width: 1.4,
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      types[index],
-                      style: TextStyle(
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isSelected ? Colors.black : AppColors.textWhite,
+                      alignment: Alignment.center,
+                      child: Text(
+                        types[index],
+                        style: TextStyle(
+                          fontFamily: 'Myriadpro',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w600,
+                          color: isSelected
+                              ? AppColors.primaryGreen
+                              : Colors.white70,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              );
-            }),
+                );
+              }),
+            ),
           ),
         ),
       ],

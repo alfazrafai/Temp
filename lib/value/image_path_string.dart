@@ -1,5 +1,5 @@
 class AppImages {
-  AppImages._(); // prevents instantiation
+  AppImages._();
 
   static const String splashBG = 'assets/images/splash_bg_image.jpg';
 
@@ -13,4 +13,6 @@ class AppImages {
   static const String profileSid = 'assets/images/sid_image.jpg';
 
   static const String mapImage = 'assets/images/sid_image.jpg';
+
+  static const String coachLogo = 'assets/images/image_coach_logo.png';
 }

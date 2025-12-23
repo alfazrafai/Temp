@@ -33,7 +33,7 @@ class SignalCard extends StatelessWidget {
                   Row(
                     children: [
                       CircleAvatar(
-                        radius: 18.r,
+                        radius: 20.r,
                         backgroundColor: Colors.white,
                         child: Image.asset(
                           AppImages.relianceLogo,
@@ -72,7 +72,7 @@ class SignalCard extends StatelessWidget {
 
                       const Spacer(),
 
-                      /// LTP
+
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -176,9 +176,16 @@ class SignalCard extends StatelessWidget {
         color: Colors.white10,
         borderRadius: BorderRadius.circular(8.r),
       ),
-      child: Text(
-        'NSE',
-        style: TextStyle(fontSize: 10.sp, color: AppColors.textWhite),
+      child: Row(
+        mainAxisAlignment: .spaceAround,
+
+        children: [
+          Icon(Icons.star, size: 15, color: AppColors.textWhite),
+          Text(
+            'NSE',
+            style: TextStyle(fontSize: 10.sp, color: AppColors.textWhite),
+          ),
+        ],
       ),
     );
   }

@@ -18,13 +18,13 @@ class CoachLocationSection extends StatelessWidget {
         'name': 'Rocks Lane - Chiswick',
         'distance': '2 kms away from you',
         'price': 'AED 2345',
-        'image': AppImages.relianceLogo,
+        'image': AppImages.mapImage,
       },
       {
         'name': 'Green Park Arena',
         'distance': '4 kms away from you',
         'price': 'AED 1999',
-        'image': AppImages.relianceLogo,
+        'image': AppImages.mapImage,
       },
     ];
 
@@ -59,8 +59,8 @@ class CoachLocationSection extends StatelessWidget {
                 return GestureDetector(
                   onTap: () => store.changeLocation(index),
                   child: Container(
-                    width: 260.w,
-                    padding: EdgeInsets.all(10.w),
+                    width: 280.w,
+                    padding: EdgeInsets.all(12.w),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14.r),
                       border: Border.all(
@@ -72,66 +72,98 @@ class CoachLocationSection extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        /// IMAGE
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.r),
                           child: Image.asset(
                             location['image'] as String,
-                            width: 70.w,
-                            height: 70.w,
+                            width: 64.w,
+                            height: 64.w,
                             fit: BoxFit.cover,
                           ),
                         ),
 
-                        SizedBox(width: 10.w),
+                        SizedBox(width: 12.w),
 
-                        /// INFO
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                location['name'] as String,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  fontFamily: 'Myriadpro',
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.textWhite,
-                                ),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      location['name'] as String,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontFamily: 'Myriadpro',
+                                        fontSize: 13.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.textWhite,
+                                      ),
+                                    ),
+                                  ),
+                                  if (isSelected)
+                                    Icon(
+                                      Icons.check_circle,
+                                      size: 16.sp,
+                                      color: AppColors.primaryGreen,
+                                    ),
+                                ],
                               ),
+
                               SizedBox(height: 4.h),
+
                               Text(
-                                location['distance'] as String,
+                                '(${location['distance']})',
                                 style: TextStyle(
                                   fontFamily: 'Myriadpro',
                                   fontSize: 11.sp,
                                   color: AppColors.textMuted,
                                 ),
                               ),
+
                               SizedBox(height: 6.h),
-                              Text(
-                                location['price'] as String,
-                                style: TextStyle(
-                                  fontFamily: 'Myriadpro',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.primaryGreen,
-                                ),
+
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.music_note_outlined,
+                                    size: 14.sp,
+                                    color: AppColors.textMuted,
+                                  ),
+                                  SizedBox(width: 6.w),
+                                  Text(
+                                    location['price'] as String,
+                                    style: TextStyle(
+                                      fontFamily: 'Myriadpro',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: AppColors.textWhite,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
                         ),
 
-                        /// CHECK ICON
-                        if (isSelected)
-                          Icon(
-                            Icons.check_circle,
+                        SizedBox(width: 10.w),
+
+                        Container(
+                          width: 36.w,
+                          height: 36.w,
+                          decoration: BoxDecoration(
                             color: AppColors.primaryGreen,
-                            size: 20.sp,
+                            borderRadius: BorderRadius.circular(10.r),
                           ),
+                          child: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            size: 18.sp,
+                            color: Colors.black,
+                          ),
+                        ),
                       ],
                     ),
                   ),

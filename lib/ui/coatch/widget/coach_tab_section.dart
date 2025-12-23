@@ -3,7 +3,6 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../value/app_colors.dart';
-
 import '../store/coach_profile_store.dart';
 
 class CoachTabsSection extends StatelessWidget {
@@ -42,7 +41,7 @@ class CoachTabsSection extends StatelessWidget {
                         SizedBox(height: 6.h),
                         Container(
                           height: 2.h,
-                          width: 40.w,
+                          width: 100.w,
                           color: isSelected
                               ? AppColors.primaryGreen
                               : Colors.transparent,
@@ -56,7 +55,6 @@ class CoachTabsSection extends StatelessWidget {
 
             SizedBox(height: 12.h),
 
-            /// Divider
             Container(height: 1, color: Colors.white12),
           ],
         );

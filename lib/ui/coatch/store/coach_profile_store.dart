@@ -29,11 +29,9 @@ abstract class _CoachProfileStore with Store {
   @observable
   int selectedLocationIndex = 0;
 
-  /// GROUP SESSION
   @observable
   bool joinedGroupSession = false;
 
-  // ---------- ACTIONS ----------
   @action
   void changeTab(int index) => selectedTabIndex = index;
 
@@ -54,7 +52,7 @@ abstract class _CoachProfileStore with Store {
 
   @action
   void incrementPeople() {
-    if (numberOfPeople < 10) numberOfPeople++;
+    if (numberOfPeople < 7) numberOfPeople++;
   }
 
   @action

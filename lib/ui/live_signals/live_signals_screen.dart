@@ -29,24 +29,35 @@ class _LiveSignalsScreenState extends State<LiveSignalsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
+      appBar: AppBar(
+        backgroundColor: AppColors.background,
+        title: Text(
+          'Live Signals',
+          style: TextStyle(
+            fontFamily: 'Myriadpro',
+            fontSize: 25,
+            fontWeight: FontWeight.w700,
+            color: AppColors.textWhite,
+            fontStyle: FontStyle.italic,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search, color: AppColors.textWhite),
+          ),
+        ],
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             children: [
-              Text(
-                'Live Signals',
-                style: TextStyle(
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textWhite,
-                ),
-              ),
-
               SizedBox(height: 16.h),
 
               SizedBox(
-                height: 48.h,
+                height: 40.h,
                 child: Observer(
                   builder: (_) => ListView.separated(
                     scrollDirection: Axis.horizontal,
@@ -72,7 +83,7 @@ class _LiveSignalsScreenState extends State<LiveSignalsScreen> {
                   itemCount: 3,
                   itemBuilder: (_, __) => SignalCard(
                     onTap: () {
-                      Navigator.pushReplacement(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(builder: (_) => CoachProfileScreen()),
                       );

@@ -18,16 +18,16 @@ class SignalFilterChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.transparent,
-      borderRadius: BorderRadius.circular(12.r),
+      borderRadius: BorderRadius.circular(25.r),
       child: InkWell(
-        borderRadius: BorderRadius.circular(12.r),
+        borderRadius: BorderRadius.circular(25.r),
         onTap: onTap,
         child: ConstrainedBox(
-          constraints: BoxConstraints(minWidth: 80.w, minHeight: 44.h),
+          constraints: BoxConstraints(minWidth: 80.w, minHeight: 35.h),
           child: Ink(
-            padding: EdgeInsets.symmetric(horizontal: 22.w),
+            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.w),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12.r),
+              borderRadius: BorderRadius.circular(30.r),
               color: isSelected ? AppColors.pGreen : null,
               gradient: isSelected
                   ? null
@@ -47,7 +47,7 @@ class SignalFilterChip extends StatelessWidget {
                 title,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 14.sp,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w600,
                   color: isSelected ? Colors.black : Colors.white,
                 ),
